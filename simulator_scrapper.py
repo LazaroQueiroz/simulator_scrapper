@@ -1,11 +1,15 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
+import os
+from dotenv import load_dotenv, dotenv_values
 
-URL = "http://ec2-18-118-128-240.us-east-2.compute.amazonaws.com/"
-CLASSE = "svelte-dw75hy"
+load_dotenv()
+
+URL = os.getenv("URL")
+CLASSE = os.getenv("CLASS")
 
 driver = webdriver.Firefox()
 driver.get(URL)
